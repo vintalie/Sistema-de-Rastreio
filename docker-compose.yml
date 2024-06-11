@@ -1,8 +1,8 @@
 services:
   app:
     build: .
-    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config gunicorn_config.py aurigaone.wsgi:application"
-#    restart: always
+    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py aurigaone.wsgi:application"
+    restart: always
     expose:
       - "8000"
     volumes:
@@ -14,7 +14,7 @@ services:
 
   nginx:
     image: nginx:alpine
-#    restart: unless-stopped
+    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
