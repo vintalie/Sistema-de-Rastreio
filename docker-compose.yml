@@ -2,11 +2,11 @@ services:
   app:
     build: .
     command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config gunicorn_config.py aurigaone.wsgi:application"
-    restart: always
+#    restart: always
     expose:
       - "8000"
     volumes:
-      - .:/app
+      - ./app:/app
       - /var/www/static/:/var/www/static/
       - /var/certbot/conf:/etc/letsencrypt/:ro
     env_file:
@@ -14,7 +14,7 @@ services:
 
   nginx:
     image: nginx:alpine
-    restart: unless-stopped
+#    restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
@@ -32,7 +32,7 @@ services:
     depends_on:
       - nginx
 
-  volumes:    
+
     
 
      
