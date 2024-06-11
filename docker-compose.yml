@@ -2,9 +2,9 @@ services:
   app:
     build: .
     #command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py aurigaone.wsgi:application"
-    command: sh -c "python3 manage.py runserver localhost:80"
+    command: sh -c "python3 manage.py runserver 0.0.0.0:80"
     restart: always
-    expose:
+    ports:
       #- "8000"
       - "80:80"
     volumes:
@@ -35,6 +35,9 @@ services:
       - nginx
 
 
+    
+
+     
     
 
      
