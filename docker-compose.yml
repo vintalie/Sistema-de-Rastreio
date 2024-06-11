@@ -2,11 +2,11 @@ services:
   app:
     build: .
     #command: sh -c "python3 manage.py runserver 0.0.0.0:80"
-    
+    command: sh -c "gunicorn --config appconsulta/gunicorn_conf.py appconsulta.wsgi:application"
     restart: always
     #expose:
     ports:
-      - "8080"
+      - 8080:8080
      # - "80:80"
     volumes:
       - ./app:/app

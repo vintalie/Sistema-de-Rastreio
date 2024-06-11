@@ -1,4 +1,4 @@
-FROM python:3.7
+FROM python:3.8
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
@@ -13,8 +13,7 @@ RUN apt-get update && \
       default-libmysqlclient-dev \
       pkg-config \
       curl && \
-      pip install --upgrade pip --no-cache-dir && \
-      pip install –r /app/requirements.txt --no-cache-dir && \
+    pip install --no-cache-dir -r requirements.txt && \
       apt-get remove -y \
         gcc \
         pkg-config && \
@@ -28,10 +27,10 @@ COPY /app/* /app/
 
 EXPOSE 8080:8080
 
-RUN python3 manage.py makemigrations 
 RUN python3 manage.py migrate --noinput 
+RUN python3 manage.py makemigrations 
 RUN python3 manage.py collectstatic --noinput 
 
-CMD ["gunicorn", "--config", "gunicorn_config.py", "app.wsgi:application"]
+
 
 EXPOSE 8080:8080
