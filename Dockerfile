@@ -23,4 +23,4 @@ RUN pip install django-allauth
 
 COPY /app/* /app/
 
-
+EXPOSE 80:80
