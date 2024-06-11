@@ -17,7 +17,7 @@ RUN apt-get update && \
         pkg-config && \
       rm -rf /var/lib/apt/lists/*
 
-
+RUN pip install gunicorn
 RUN pip install crispy_bootstrap4
 RUN pip install django-allauth
 
