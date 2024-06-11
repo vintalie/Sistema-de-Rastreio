@@ -31,6 +31,7 @@ services:
      depends_on:
        - nginx
      command: certonly --webroot --agree-tos --non-interactive \
-               --email your_email@example.com \
+               --email l1n3skts@gmail.com \
                --webroot-path=/usr/share/nginx/html \
-               --domains example.com,//www.example.com # Update with your domain name(s)
+               --domains reastreieseupedidojdlg.online,//www.reastreieseupedidojdlg.online # Update with your domain name(s)
+
