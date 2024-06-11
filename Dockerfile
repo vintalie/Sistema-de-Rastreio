@@ -19,6 +19,7 @@ RUN apt-get update && \
         pkg-config && \
       rm -rf /var/lib/apt/lists/*
 
+RUN pip install --upgrade pip
 RUN pip install gunicorn
 RUN pip install django
 RUN pip install crispy_bootstrap4
