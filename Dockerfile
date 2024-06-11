@@ -29,4 +29,4 @@ RUN python3 manage.py makemigrations
 RUN python3 manage.py migrate --noinput 
 RUN python3 manage.py collectstatic --noinput 
 
-EXPOSE 8000:8000
+EXPOSE 8080:8080
