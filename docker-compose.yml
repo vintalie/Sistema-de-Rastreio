@@ -1,10 +1,13 @@
 services:
   app:
     build: .
+    #command: sh -c "python3 manage.py runserver 0.0.0.0:80"
     command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py appconsulta.wsgi:application"
     restart: always
     expose:
+    #ports:
       - "8080"
+     # - "80:80"
     volumes:
       - ./app:/app
       - /var/www/static/:/var/www/static/
@@ -19,19 +22,23 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-       - /var/www/static/:/var/www/static/
-       - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - /var/www/static/:/var/www/static/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
-       - app
+      - app
 
   certbot:
-     image: certbot/certbot:v1.15. # Updated to latest version for example (v1.15.)
-     volumes_from:
-       - nginx # Mount Nginx volume to Certbot container for certificate installation.
-     depends_on:
-       - nginx
-     command: certonly --webroot --agree-tos --non-interactive \
-               --email setenando87@gmail.com \
-               --webroot-path=/usr/share/nginx/html \
-               --domains reastreieseupedidojdlg.online,//www.reastreieseupedidojdlg.online # Update with your domain name(s)
+    image: certbot/certbot:latest
+    volumes:
+      - /var/certbot/conf:/etc/letsencrypt/:rw
+      - /var/certbot/www/:/var/www/certbot/:rw
+    depends_on:
+      - nginx
 
+
+    
+
+     
+    
+
+     
