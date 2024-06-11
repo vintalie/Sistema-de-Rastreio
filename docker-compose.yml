@@ -1,0 +1,44 @@
+services:
+  app:
+    build: .
+<<<<<<< HEAD
+    command: python app/manage.py runserver 0.0.0.0:80
+    volumes:
+       - .:/app
+    ports:
+      - "80:80"
+=======
+    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config gunicorn_config.py aurigaone.wsgi:application"
+    restart: always
+    expose:
+      - "8000"
+    volumes:
+      - .:/app
+      - /var/www/static/:/var/www/static/
+      - /var/certbot/conf:/etc/letsencrypt/:ro
+    env_file:
+      - .env
+
+  nginx:
+    image: nginx:alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/www/static/:/var/www/static/
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    depends_on:
+      - app
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - /var/certbot/conf:/etc/letsencrypt/:rw
+      - /var/certbot/www/:/var/www/certbot/:rw
+    depends_on:
+      - nginx
+>>>>>>> a42a528 (to production)
+    
+
+     
