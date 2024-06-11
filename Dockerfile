@@ -26,3 +26,7 @@ RUN pip install django-allauth
 COPY /app/* /app/
 
 EXPOSE 8000:8000
+
+CMD ["python3", "manage.py", "makemigrations" ,"&&", "python3", "manage.py", "migrate", "--noinput" "&&", "python3", "manage.py", "collectstatic", "--noinput" ,"&&", "gunicorn" ,"--config" ,"appconsulta/gunicorn_conf.py", "aurigaone.wsgi:application"]
+
+
