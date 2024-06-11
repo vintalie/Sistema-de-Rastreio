@@ -6,8 +6,8 @@ services:
     restart: always
     #expose:
     ports:
-      - "8080"
-     # - "80:80"
+     # - "8080"
+      - "80:80"
     volumes:
       - ./app:/app
       - /var/www/static/:/var/www/static/
