@@ -18,10 +18,10 @@ services:
     ports:
       - "80:80"
       - "443:443"
-     volumes:
+    volumes:
        - /var/www/static/:/var/www/static/
        - ./nginx/conf.d/:/etc/nginx/conf.d/
-     depends_on:
+    depends_on:
        - app
 
   certbot:
