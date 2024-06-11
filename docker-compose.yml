@@ -5,7 +5,8 @@ services:
     command: sh -c "python3 manage.py runserver 0.0.0.0:8000"
     restart: always
     expose:
-      - "8000"
+      #- "8000"
+      - "80"
     volumes:
       - ./app:/app
       - /var/www/static/:/var/www/static/
