@@ -9,6 +9,7 @@ COPY app/requirements.txt /app/
 RUN apt-get update && \
     apt-get install -y \
       gcc \
+      gunicorn \
       default-libmysqlclient-dev \
       pkg-config \
       curl && \
