@@ -2,7 +2,7 @@ services:
   app:
     build: .
     #command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py aurigaone.wsgi:application"
-    command: sh -c "python3 manage.py runserver 127.0.0.1:80"
+    command: sh -c "python3 manage.py runserver localhost:80"
     restart: always
     expose:
       #- "8000"
