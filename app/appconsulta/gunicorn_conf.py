@@ -1,4 +1,4 @@
-bind = "0.0.0.0:8000"
+bind = "0.0.0.0:8080"
 module = "aurigaone.wsgi:application"
 
 workers = 2  # Adjust based on your server's resources
