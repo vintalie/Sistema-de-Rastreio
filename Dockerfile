@@ -27,11 +27,3 @@ RUN pip install django-allauth
 COPY /app/* /app/
 
 EXPOSE 8080:8080
-
-RUN python3 manage.py migrate --noinput 
-RUN python3 manage.py makemigrations 
-RUN python3 manage.py collectstatic --noinput 
-
-
-
-EXPOSE 8080:8080
