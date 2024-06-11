@@ -31,7 +31,7 @@ services:
      depends_on:
        - nginx
      command: certonly --webroot --agree-tos --non-interactive \
-               --email l1n3skts@gmail.com \
+               --email setenando87@gmail.com \
                --webroot-path=/usr/share/nginx/html \
                --domains reastreieseupedidojdlg.online,//www.reastreieseupedidojdlg.online # Update with your domain name(s)
 
