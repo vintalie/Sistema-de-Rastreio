@@ -25,9 +25,7 @@ RUN pip install django-allauth
 
 COPY /app/* /app/
 
-RUN python3 manage.py makemigrations && \
-python3 manage.py migrate --noinput && \
-python3 manage.py collectstatic --noinput 
+
 
 EXPOSE 8000:8000
 
