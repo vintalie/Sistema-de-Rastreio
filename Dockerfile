@@ -13,7 +13,8 @@ RUN apt-get update && \
       default-libmysqlclient-dev \
       pkg-config \
       curl && \
-    pip install --no-cache-dir -r requirements.txt && \
+      pip install --upgrade pip --no-cache-dir && \
+      pip install –r /app/requirements.txt --no-cache-dir && \
       apt-get remove -y \
         gcc \
         pkg-config && \
