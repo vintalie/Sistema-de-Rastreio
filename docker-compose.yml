@@ -1,7 +1,7 @@
 services:
   app:
     build: .
-    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput"
+    command: sh -c "/app/setup.sh"
     #command: sh -c "python3 manage.py runserver 0.0.0.0:80"
     restart: always
     expose:

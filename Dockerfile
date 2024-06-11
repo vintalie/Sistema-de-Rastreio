@@ -25,8 +25,4 @@ RUN pip install django-allauth
 
 COPY /app/* /app/
 
-
-
 EXPOSE 8000:8000
-
-CMD ["gunicorn", "--config", "appconsulta/gunicorn_conf.py", "aurigaone.wsgi:application"]
