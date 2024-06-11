@@ -25,20 +25,10 @@ RUN pip install django-allauth
 
 COPY /app/* /app/
 
-RUN apt-get install -y gunicorn
+RUN python3 manage.py makemigrations && \
+python3 manage.py migrate --noinput && \
+python3 manage.py collectstatic --noinput 
 
-RUN useradd \
---comment "Application user" \
---no-create-home \
---system \
---user-group \
-unicorn
+EXPOSE 8000:8000
 
-COPY --chown=unicorn:unicorn --chmod=0640 manage.py /app/manage.py
-
-# Run phase
-EXPOSE 8000
-USER unicorn
-
-
-
+CMD ["gunicorn", "--config", "appconsulta/gunicorn_conf.py", "aurigaone.wsgi:application"]
