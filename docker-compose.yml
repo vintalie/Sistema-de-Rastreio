@@ -4,8 +4,8 @@ services:
     #command: sh -c "python3 manage.py runserver 0.0.0.0:80"
     
     restart: always
-    expose:
-    #ports:
+    #expose:
+    ports:
       - "8080"
      # - "80:80"
     volumes:
