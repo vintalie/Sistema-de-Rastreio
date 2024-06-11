@@ -25,4 +25,11 @@ RUN pip install django-allauth
 
 COPY /app/* /app/
 
+RUN python3 manage.py makemigrations 
+RUN python3 manage.py migrate --noinput 
+RUN python3 manage.py collectstatic --noinput 
+
+
+CMD [ "gunicorn", "--config", "appconsulta/gunicorn_conf.py", "aurigaone.wsgi:application" ]
+
 EXPOSE 8000:8000
