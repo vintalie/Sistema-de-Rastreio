@@ -34,7 +34,7 @@ RUN useradd \
 --user-group \
 unicorn
 
-COPY --chown=unicorn:unicorn --chmod=0640 app.py /srv/app.py
+COPY --chown=unicorn:unicorn --chmod=0640 manage.py /app/manage.py
 
 # Run phase
 EXPOSE 8000
