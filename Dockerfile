@@ -5,10 +5,6 @@ WORKDIR /app
 
 COPY app/requirements.txt /app/
 
-<<<<<<< HEAD
-RUN pip install -r requirements.txt
-RUN pip install django-crispy-forms
-=======
 RUN apt-get update && \
     apt-get install -y \
       gcc \
@@ -22,7 +18,6 @@ RUN apt-get update && \
       rm -rf /var/lib/apt/lists/*
 
 
->>>>>>> a42a528 (to production)
 RUN pip install crispy_bootstrap4
 RUN pip install django-allauth
 

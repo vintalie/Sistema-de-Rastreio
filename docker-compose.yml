@@ -1,13 +1,6 @@
 services:
   app:
     build: .
-<<<<<<< HEAD
-    command: python app/manage.py runserver 0.0.0.0:80
-    volumes:
-       - .:/app
-    ports:
-      - "80:80"
-=======
     command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config gunicorn_config.py aurigaone.wsgi:application"
     restart: always
     expose:
@@ -38,7 +31,8 @@ services:
       - /var/certbot/www/:/var/www/certbot/:rw
     depends_on:
       - nginx
->>>>>>> a42a528 (to production)
+
+  volumes:    
     
 
      
