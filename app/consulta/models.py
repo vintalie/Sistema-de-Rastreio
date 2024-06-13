@@ -17,7 +17,7 @@ class Pedidos(models.Model):
         )
     )
     status = models.CharField(
-        
+        max_length=10,
         default='A Caminho',
         choices=(
             ('Entregue', 'Entregue'),
