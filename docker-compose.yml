@@ -12,7 +12,7 @@ services:
     volumes:
       - ./app:/app
       - /var/www/static/:/var/www/static/
-      - /var/certbot/conf:/etc/letsencrypt/:ro
+      - ./var/certbot/conf:/etc/letsencrypt/:ro
     env_file:
       - .env
 
