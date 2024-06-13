@@ -145,7 +145,7 @@ html, body {
     align-items: center;
 }
 
-.form-group input::placeholder {
+.form-group > input::placeholder {
         color: rgb(107, 107, 107) !important;
     }
 .card-search-main form input{
