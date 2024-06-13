@@ -2,8 +2,8 @@ services:
   app:
     container_name: app
     build: .
-    command: sh -c "python3 manage.py runserver 0.0.0.0:8080"
-    #command: sh -c "python3 manage.py makemigrations --merge && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py appconsulta.wsgi:application"
+    #command: sh -c "python3 manage.py runserver 0.0.0.0:8080"
+    command: sh -c "python3 manage.py makemigrations --merge && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py appconsulta.wsgi:application"
     restart: always
     expose:
     #ports:
