@@ -7,7 +7,6 @@ class CadastroForm(forms.ModelForm):
         model = Pedidos
         fields = (
             'nome_cliente',
-            'id_pedido',
             'status',
             'prazo', 'cidade', 'estado',
             'cep_origem',
