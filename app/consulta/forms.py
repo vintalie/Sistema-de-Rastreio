@@ -6,7 +6,6 @@ class CadastroForm(forms.ModelForm):
     class Meta:
         model = Pedidos
         fields = (
-            'id',
             'nome_cliente',
             'status',
             'prazo', 'cidade', 'estado',
