@@ -25,7 +25,7 @@ services:
     volumes:
       - /var/www/static/:/var/www/static/
       - /nginx/conf/:/etc/nginx/conf.d/:ro
-      - /certbot/www/:/var/www/certbot/:ro
+      - ./certbot/www/:/var/www/certbot/:ro
     depends_on:
       - app
 
