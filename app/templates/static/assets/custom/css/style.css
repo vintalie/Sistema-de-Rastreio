@@ -144,6 +144,25 @@ html, body {
     justify-content: space-between;
     align-items: center;
 }
+
+.form-control input::placeholder {
+        color: rgb(107, 107, 107) !important;
+    }
+.card-search-main form input{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-size: 17px;
+    border-radius: 5px;
+    border: 2px solid rgba(171, 171, 171, 0.41) !important;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgb(107, 107, 107) !important;
+    text-align: center;
+    outline: none;
+
+}
+
 .card-search-main form .btn{
     width: 100%;
     height: 35px;
