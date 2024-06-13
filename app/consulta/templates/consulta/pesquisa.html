@@ -8,12 +8,12 @@
         <form method="POST" action="{% url 'pedido:pesquisa' %}">
             {% csrf_token %}
             <div class="form-group text-center">
-                <label for="InputRastreio">CODIGO DE RASTREIO</label>
+                <label for="InputRastreio">Informe o código de rastreio</label>
                 <input type="text" name='rastreio' class="form-control" id="InputRastreio"
-                    aria-describedby="usuarioHelp" placeholder="Digite o codigo de rastreio">
+                    aria-describedby="usuarioHelp" placeholder="Ex: 969024br">
             </div>
             
-            <button type="submit" class="btn btn-dark btn-block btn-lg">Rastrear</button>
+            <button type="submit" class="btn btn-dark btn-block btn-lg">PROCURAR</button>
         </form>
         
     </div>
