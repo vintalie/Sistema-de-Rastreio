@@ -1,13 +1,13 @@
 services:
   app:
     build: .
-    command: sh -c "python3 manage.py runserver 0.0.0.0:80"
-    #command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py appconsulta.wsgi:application"
+    #command: sh -c "python3 manage.py runserver 0.0.0.0:80"
+    command: sh -c "python3 manage.py makemigrations && python3 manage.py migrate --noinput && python3 manage.py collectstatic --noinput && gunicorn --config appconsulta/gunicorn_conf.py appconsulta.wsgi:application"
     restart: always
-    #expose:
-    ports:
-     # - "8080"
-      - "80:80"
+    expose:
+    #ports:
+      - "8080:8080"
+    #  - "80:80"
     volumes:
       - ./app:/app
       - /var/www/static/:/var/www/static/
