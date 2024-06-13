@@ -5,5 +5,5 @@ workers = 2  # Adjust based on your server's resources
 worker_connections = 1000
 threads = 4
 
-#certfile = "/etc/letsencrypt/live/reastreieseupedidojdlg.online/fullchain.pem"
-#keyfile = "/etc/letsencrypt/live/reastreieseupedidojdlg.online/privkey.pem"
+certfile = "/etc/letsencrypt/live/reastreieseupedidojdlg.online/fullchain.pem"
+keyfile = "/etc/letsencrypt/live/reastreieseupedidojdlg.online/privkey.pem"
