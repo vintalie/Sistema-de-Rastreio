@@ -122,7 +122,7 @@ ul.errorlist li {
    
 }
 
-.contents {
+.content {
     display: flex;
     flex-direction: column;
     margin: 0 60px;

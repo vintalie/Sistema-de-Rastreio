@@ -3,7 +3,7 @@
 {% block conteudo %}
 
 <div class="card-search-main">
-        <h1>Rastreie seu pedido</h1>
+        <h3 class="text-center">Rastreie seu pedido</h1>
 
         <form method="POST" action="{% url 'pedido:pesquisa' %}">
             {% csrf_token %}
