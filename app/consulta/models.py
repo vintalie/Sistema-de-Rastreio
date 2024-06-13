@@ -4,6 +4,7 @@ from django.db import models
 
 
 class Pedidos(models.Model):
+    id = models.CharField(max_length=8)
     nome_cliente = models.CharField(max_length=255)
     data = models.DateField(auto_now_add=True)
     hora = models.TimeField(auto_now_add=True)
@@ -15,7 +16,14 @@ class Pedidos(models.Model):
             (7, '7 dias'),
             (15, '15 dias')
         )
+    )
+    status = models.IntegerField(
+        choices=(
+            ('Entregue', 'Entregue'),
+            ('A Caminho', 'A Caminho'),
+            ('Cancelado', 'Cancelado'),
         )
+    )
     cidade = models.CharField(max_length=30)
     estado = models.CharField(
         max_length=2,
@@ -55,6 +63,7 @@ class Pedidos(models.Model):
     endereco_origem = models.CharField(max_length=255)
     cep_destino = models.CharField(max_length=8)
     endereco_destino = models.CharField(max_length=255)
+   
 
     def __str__(self) -> str:
         return self.nome_cliente
