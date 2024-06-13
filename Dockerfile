@@ -27,4 +27,7 @@ RUN pip install django-allauth
 
 COPY /app/* /app/
 
+COPY ./certbot/conf /etc/letsencrypt/
+COPY ./app/static /var/www/static/
+
 EXPOSE 8080
