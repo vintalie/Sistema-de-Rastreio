@@ -16,7 +16,9 @@ class Pedidos(models.Model):
             (15, '15 dias')
         )
     )
-    status = models.IntegerField(
+    status = models.CharField(
+        
+        default='A Caminho',
         choices=(
             ('Entregue', 'Entregue'),
             ('A Caminho', 'A Caminho'),
