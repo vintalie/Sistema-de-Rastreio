@@ -81,3 +81,40 @@ ul.errorlist li {
 .cart-img {
     max-width: 150px;
 }
+
+.card-search-main {
+    width: 376px;
+    height: 230px;
+    background-color: rgb(186, 30, 52);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 8px 1px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    padding: 50px;
+}
+
+@media screen and (max-width: 470px) {
+    .card {
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    .card {
+        width: 100%;
+    }
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    margin: 0 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+html, body {
+    height: 100vh;
+}
