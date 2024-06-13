@@ -4,7 +4,7 @@ from django.db import models
 
 
 class Pedidos(models.Model):
-    id = models.AutoField(primary_key=True)       
+    pedido_id = models.AutoField(primary_key=True)       
     nome_cliente = models.CharField(max_length=255)
     data = models.DateField(auto_now_add=True)
     hora = models.TimeField(auto_now_add=True)
