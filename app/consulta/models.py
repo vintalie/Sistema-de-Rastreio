@@ -21,9 +21,11 @@ class Pedidos(models.Model):
         max_length=10,
         default='A Caminho',
         choices=(
+            ('Objeto Postado', 'Objeto Postado'),
+            ('Em transferência', 'Em transferência'),
+            ('Unidade de tratamento', 'Unidade de tratamento'),
+            ('Em Rota de entrega', 'Em Rota de entrega'),
             ('Entregue', 'Entregue'),
-            ('A Caminho', 'A Caminho'),
-            ('Cancelado', 'Cancelado'),
         )
     )
     cidade = models.CharField(max_length=30)

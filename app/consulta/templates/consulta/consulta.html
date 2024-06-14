@@ -11,25 +11,72 @@
                 <h2>Rastreamento</h2>
             </div>
             <div class="infos">
-                <label>Nome:</label>
-                <h3>{{pedido.nome_cliente}}</h3>  
+                <label>Nome:
+                    <h3>{{pedido.nome_cliente}}</h3>
+                </label>
             </div>
             <div class="infos">
                 <label for="">Origem
-                <h3>{{pedido.endereco_origem}}</h3>
+                    <h3>{{pedido.endereco_origem}}</h3>
+                </label>
             </div>
             <div class="infos">
                 <label for="">Destino 
-                <h3>{{endereco_destino}}</h3>
+                    <h3>{{endereco_destino}}</h3>
+                </label>
             </div>
             <div class="infos">
                 <label for="">Data da Postagem
-                <h3>{{pedido.data}}</h3>
+                    <h3>{{pedido.data}}</h3>
+                </label>
             </div>
-            <div class="infos">
+
+            {%if pedido.status%}
+            <div class="Status">
                 <label for="">Status da Entrega
-                <h3>{{pedido.status}}</h3>
+                    {%if pedido.status == 'Objeto Postado'%}
+                        <div class="status">
+                        <img src="{% static 'imgs/icon_2001.png' %}">
+                            <div class="infos">
+                                <label for="">Objeto Postado</label>
+                            </div>
+                        </div>
+                    {%endif%}
+                    {%if pedido.status == 'Em transferência'%}
+                        <div class="status">
+                        <img src="{% static 'imgs/icon_2002.png' %}">
+                            <div class="infos">
+                                <label for="">Em transferência</label>
+                            </div>
+                        </div>
+                    {%endif%}
+                    {%if pedido.status == 'Unidade de tratamento'%}
+                        <div class="status">
+                        <img src="{% static 'imgs/icon_2003.png' %}">
+                            <div class="infos">
+                                <label for="">Unidade de tratamento</label>
+                            </div>
+                        </div>
+                    {%endif%}
+                    {%if pedido.status == 'Em Rota de entrega'%}
+                        <div class="status">
+                        <img src="{% static 'imgs/icon_2004.png' %}">
+                            <div class="infos">
+                                <label for="">Em Rota de entrega</label>
+                            </div>
+                        </div>
+                    {%endif%}
+                    {%if pedido.status == 'Entregue'%}
+                        <div class="status">
+                        <img src="{% static 'imgs/icon_2005.png' %}">
+                            <div class="infos">
+                                <label for="">Entregue</label>
+                            </div>
+                        </div>
+                    {%endif%}
+                </label>
             </div>
+            {%endif%}
             
             
             <!--
