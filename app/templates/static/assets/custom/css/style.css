@@ -200,11 +200,19 @@ html, body {
 }
 
 .infos label {
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 500;
 }
 
 .infos h3 {
-    font-size: 16px;
+    font-size: 16px !important;
     font-weight: 400;
+}
+.pedido-result{
+    width: 436px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    margin-top: 10px;
 }
