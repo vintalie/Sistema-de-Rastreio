@@ -7,15 +7,42 @@
     <div class="col-lg">
 
         <div class="container">
-            <h2>Pedido#{{pedido.id}}</h2>
+            <div class="title-page">
+                <h2>Rastreamento</h2>
+            </div>
+            <div class="infos">
+                <label>Nome:</label>
+                <h3>{{pedido.nome_cliente}}</h3>  
+            </div>
+            <div class="infos">
+                <label for="">Origem
+                <h3>{{pedido.endereco_origem}}</h3>
+            </div>
+            <div class="infos">
+                <label for="">Destino 
+                <h3>{{endereco_destino}}</h3>
+            </div>
+            <div class="infos">
+                <label for="">Data da Postagem
+                <h3>{{pedido.data}}</h3>
+            </div>
+            <div class="infos">
+                <label for="">Status da Entrega
+                <h3>{{pedido.status}}</h3>
+            </div>
+            
+            
+            <!--
+            <h2>Pedido#{{pedido.pk}}</h2>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Nome Cliente</th>
+                        <th scope="col"> Cliente</th>
                         <th scope="col">Data</th>
                         <th scope="col">Hora</th>
                         <th scope="col">Prazo</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Endereco</th>
                     </tr>
@@ -27,10 +54,11 @@
                         <td>{{pedido.data}}</td>
                         <td>{{pedido.hora}}</td>
                         <th scope="row">{{pedido.prazo}} Dias</th>
+                        <td></td>
                         <td>{{pedido.estado}}</td>
                         <td>{{pedido.endereco_origem}}</td>
                         
-                    </tr>
+                    </tr>-->
             
                     <!-- Adicione mais linhas conforme necessário -->
                 </tbody>

@@ -174,3 +174,37 @@ html, body {
     background: none rgb(186, 30, 52);
     cursor: pointer;    
 }
+
+.title-page {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(220, 220, 220);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(214, 214, 214);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 4px 1px;
+}
+.title-page h2{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.infos {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.infos label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.infos h3 {
+    font-size: 16px;
+    font-weight: 400;
+}
