@@ -8,7 +8,7 @@
 
         <div class="container">
             {% for pedido in pedidos %}
-            <h2>Pedido#{{pedido.id}}</h2>
+            <h2>Pedido#{{pedido.pk}}</h2>
             <table class="table">
                 <thead>
                     <tr>
@@ -17,8 +17,10 @@
                         <th scope="col">Data</th>
                         <th scope="col">Hora</th>
                         <th scope="col">Prazo</th>
+                        <th scope="col">Status</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Endereco</th>
+                        <th scope="col">Destino</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,8 +30,10 @@
                         <td>{{pedido.data}}</td>
                         <td>{{pedido.hora}}</td>
                         <th scope="row">{{pedido.prazo}} Dias</th>
+                        <td>{{pedido.status}}</td>
                         <td>{{pedido.estado}}</td>
                         <td>{{pedido.endereco_origem}}</td>
+                        <td>{{pedido.endereco_destino}}</td>
                         
                     </tr>
             

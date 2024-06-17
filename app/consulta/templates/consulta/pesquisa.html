@@ -2,19 +2,18 @@
 
 {% block conteudo %}
 
-<div class="row">
-    <div class="col-lg">
-        <h1>Rastreie seu pedido</h1>
+<div class="card-search-main">
+        <h3 class="text-center">Rastreie seu pedido</h1>
 
         <form method="POST" action="{% url 'pedido:pesquisa' %}">
             {% csrf_token %}
-            <div class="form-group">
-                <label for="InputRastreio">CODIGO DE RASTREIO</label>
+            <div class="form-group text-center">
+                <label for="InputRastreio">Informe o código de rastreio</label>
                 <input type="text" name='rastreio' class="form-control" id="InputRastreio"
-                    aria-describedby="usuarioHelp" placeholder="Digite o codigo de rastreio">
+                    aria-describedby="usuarioHelp" placeholder="Ex: 969024br">
             </div>
             
-            <button type="submit" class="btn btn-dark btn-block btn-lg">Rastrear</button>
+            <button type="submit" class="btn btn-dark btn-block btn-lg">PROCURAR</button>
         </form>
         
     </div>
