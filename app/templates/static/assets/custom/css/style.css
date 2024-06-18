@@ -218,7 +218,7 @@ html, body {
     font-weight: 400;
 }
 .pedido-result{
-    width: 436px;
+    max-width: 436px;
     display: flex;
     flex-direction: column;
     justify-content: center;
